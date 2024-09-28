@@ -8,8 +8,16 @@ namespace ConsoleUI
 {
     internal class Motorcycle : Vehicle
     {
-        public override string Year { get; set; }
-        public override string Make { get; set; }
-        public override string Model { get; set; }
+        public bool HasSideCart { get; set; }
+
+        public override void DriveAbstract()
+        {
+            Console.WriteLine("Motorcycle is driving");
+        }
+
+        public override void DriveVirtual()
+        {
+            Console.WriteLine("Virtual motorcycle drive method");
+        }
     }
 }

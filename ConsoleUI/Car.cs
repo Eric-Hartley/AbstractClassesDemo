@@ -8,8 +8,11 @@ namespace ConsoleUI
 {
     internal class Car : Vehicle
     {
-        public override string Year { get; set; }
-        public override string Make { get; set; }
-        public override string Model { get; set; }
+        public bool HasTrunk { get; set; }
+
+        public override void DriveAbstract()
+        {
+            Console.WriteLine("Car is driving");
+        }
     }
 }

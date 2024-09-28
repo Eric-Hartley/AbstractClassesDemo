@@ -33,22 +33,65 @@ namespace ConsoleUI
             */
 
             // Create a list of Vehicle called vehicles
-
+            var vehicles = new List<Vehicle>();
             /*
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
              * 
              * Set the properties values with object initializer syntax
              */
 
+            var car1 = new Car() 
+            { 
+                HasTrunk = true,
+                Year = "2015",
+                Make = "BMW",
+                Model = "335i"
+            };
+            var motorcycle1 = new Motorcycle() 
+            { 
+                HasSideCart = true,
+                Year = "2012",
+                Make = "Honda",
+                Model = "R6"
+            };
+            Vehicle vehicle1 = new Car() 
+            {
+                Year = "2020",
+                Make = "BMW",
+                Model = "M3"
+            };
+            Vehicle vehicle2 = new Motorcycle() 
+            {
+                Year = "2016",
+                Make = "Kawasaki",
+                Model = "Ninja 650"
+            };
+
             /*
              * Add the 4 vehicles to the list
              * Using a foreach loop iterate through the list and display each of the properties
              */
 
+            vehicles.Add(car1);
+            vehicles.Add(motorcycle1);
+            vehicles.Add(vehicle1);
+            vehicles.Add(vehicle2);
+
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine("Year: " + vehicle.Year);
+                Console.WriteLine("Make: " + vehicle.Make);
+                Console.WriteLine("Model: " + vehicle.Model);
+                vehicle.DriveVirtual();
+                vehicle.DriveAbstract();
+                Console.WriteLine();
+
+            }
             // Call each of the drive methods for one car and one motorcycle
 
+
             #endregion            
-            Console.ReadLine();
+            
         }
     }
 }
